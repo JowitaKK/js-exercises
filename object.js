@@ -26,3 +26,25 @@ var person = {
 };
 
 person.printName();
+
+// nested 
+var flights = {
+    airline : "Oceanic",
+    number : 666,
+    departure: {
+        Iata : "Syd",
+        time : "2003-04-11 10:14",
+        city: "LA"
+    },
+    arrival : {
+        Iata : "Lax",
+        time : "2003-09-11 7:14",
+        city: "NY"
+
+    }
+};
+
+
+flights.departure.Iata
+
+flights["airline"]
