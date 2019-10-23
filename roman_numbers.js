@@ -6,7 +6,7 @@ function solution(number){
     for( var i = 0; i < roman.length; i ++) {
         for(var key in roman[i]) {
             while(value + roman[i][key] <= number) {
-                value += roman[i][k];
+                value += roman[i][key];
                 romanStr += key;
             }
         }
@@ -27,3 +27,36 @@ function solution(number){
          }).reverse().join("");
 }
 */
+
+
+/*
+function solution(number){
+    var result = "";
+    var transform = function(value, roman){
+        while (number >= value){
+            result+=roman;
+            number -=value;
+        }
+    }
+
+    transform(1000, "M");
+    transform(900, "CM");
+    transform(500, "D");
+    transform(400, "CD");
+    transform(100, "C");
+    transform(90, "XC");
+    transform(50, "L");
+    transform(40, "XL");
+    transform(10, "X");
+    transform(9, "IX");
+    transform(5, "V");
+    transform(4, "IV");
+    transform(1, "I");
+    
+    return result;
+}
+
+*/
+
+
+
