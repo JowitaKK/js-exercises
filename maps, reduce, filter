@@ -1,0 +1,84 @@
+/*                          .map()                         
+ Keep in mind that the resulting array will always be the same length as the original array */
+
+var officers = [
+    { id: 20, name: 'Jow K'},
+    { id: 37, name: 'Marcin'},
+    { id: 22, name: 'Antos'}, 
+]; 
+
+// .forEach():
+
+
+var officersIds = [];
+
+officers.forEach(function (officer){
+    officersIds.push(officer.id);
+});
+
+// .map():
+
+var officersIds = officers.map(function (officer){
+    return officer.id
+});
+
+// arrow function 
+
+const officersIds = officers.map(officer => officer.id);
+
+
+/*                          .reduce()                           
+also runs a callback for each element of an array. 
+What’s different here is that reduce passes the result of this callback (the accumulator) 
+from one array element to the other.*/
+
+var pilots = [
+    {
+        id: 10,
+        name: " Dameron",
+        years: 14,
+    },
+    {
+        id: 41,
+        name: "Tallissan Lintra",
+        years: 16,
+      },
+      {
+        id: 99,
+        name: "Ello Asty",
+        years: 22,
+      }
+];
+
+var totalYears = pilots.reduce(function (accumulator, pilot) {
+    return accumulator + pilot.years;
+}, 0); // important starting value set as 0
+
+
+// arrow function 
+
+const totalYears = pilots.reduce((acc, pilot) => acc + pilot.years, 0);
+
+
+/* find which pilot is the most experienced one */
+
+var mostExpPilot = pilots.reduce(function (oldest, pilot) {
+  return (oldest.years || 0) > pilot.years ? oldest : pilot;
+}, {});
+
+
+/*                          .filter()                           
+ an array, but only want some of the elements in it? That’s where .filter() comes in!*/
+
+ 
+
+
+
+
+
+
+
+
+
+
+
