@@ -169,10 +169,52 @@ var jediScores = jediPersonnel.map(function (score){
     // Result: [154, 110, 156]
 
 // C- use reduce to get total 
-var getTotalScore = jediScores.reduce(function (acc, score){
-    return acc + score; 
-}) 
+var getTotalScore = jediScores.reduce(function (acc, total){
+    return acc + total; 
+}, 0);
     //result : 420
+
+
+//----------------- chain all of above-------------
+
+var totalJediScore = personnel 
+    .filter(function (person) {
+        return person.isForceUser;
+    })
+    .map(function (score){
+        return score.pilotingScore + score.shootingScore;
+    })
+    .reduce(function (acc, total){
+        return  acc + total; 
+    }, 0);
+
+//A - arrow function 
+
+const totalJediScore = personnel 
+    .filter(person => person.isForceUser)
+    .map(score => score.pilotingScore + score.shootingScore)
+    .reduce((acc, total) => acc + total, 0 );
+
+//B - forEach 
+var data = [
+    {
+      name: "Jan Dodonna",
+      title: "General",
+    },
+    {
+      name: "Gial Ackbar",
+      title: "Admiral",
+    },
+  ]
+
+  var results = [];
+
+  data.forEach(function (element) {
+      var formatted = formatElement(element);
+      results.push(formatted)
+  });
+
+
 
 
 
